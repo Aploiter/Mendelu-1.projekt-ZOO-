@@ -67,7 +67,8 @@ void IngameMenu::returnToTitle()
 void IngameMenu::exitGame()
 {
     std::cout << "Exiting game..." << std::endl;
-    Sleep(2500);
+    Sleep(1500);
+    exit(0);
 }
 
 void IngameMenu::playerInfo()

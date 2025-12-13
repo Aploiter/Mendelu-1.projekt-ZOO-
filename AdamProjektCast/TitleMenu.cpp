@@ -97,4 +97,5 @@ void TitleMenu::exitGame()
 {
     std::cout << "Exiting game..." << std::endl;
     Sleep(1500);
+    exit(0);
 }

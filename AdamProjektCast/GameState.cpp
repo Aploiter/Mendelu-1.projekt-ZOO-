@@ -1,44 +1,56 @@
 #include "GameState.h"
 #include <fstream>
 #include <iostream>
+#include "IngameMenu.h"
+#include "TitleMenu.h"
 
-Player CurrentPlayer(100, 10);  // deklarace statů hráče
+// globální hráč
+Player CurrentPlayer(100, 10);
+// vytvoření konstantní hodnoty int (seceretKey) pro ověřování zda byla data ve složce SaveFile.txt upravována
+const int secretKey = 123456;
 
-bool DoesSaveExist()
+/*bool DoesSaveExist()
 {
-    std::ifstream f("SaveFile.txt");
-    return f.is_open();
-}
+    std::ifstream Save("SaveFile.txt");
+    return Save.is_open();
+}*/
 
+//TODO zašifrovat checksum pro ztížení upravy dat v SaveFile.txt
 void SaveGame()
 {
-    std::ofstream file("SaveFile.txt");
-    if (file.is_open())
+    std::ofstream Save("SaveFile.txt");
+    if (Save.is_open())
     {
-        file << CurrentPlayer.getHealth() << '\n';
-        file << CurrentPlayer.getStrength() << '\n';
+        int hp = CurrentPlayer.getHealth();
+        int str = CurrentPlayer.getStrength();
+        int checksum = hp + str + secretKey;
+        Save << hp << " \n" << str << " \n" << checksum;
         std::cout << "Game saved." << std::endl;
     }
 }
 
 Player LoadGame()
 {
-    std::ifstream file("SaveFile.txt");
-    if (!file.is_open())
+    std::ifstream Save("SaveFile.txt");
+    if (!Save.is_open())
     {
         std::cerr << "Save file not found." << std::endl;
-        //return Player(100, 10);
+        IngameMenu* menu;
+        menu->print();
     }
 
-    int hp, str;
-    file >> hp >> str;
+    int hp, str, checksum;
+    Save >> hp >> str >> checksum;
 
-    if (file.fail())
+    if (Save.fail() || (hp + str + secretKey) != checksum)
     {
-        std::cerr << "Save file is corrupted!" << std::endl;
-        //return Player(100, 10);
+        std::cerr << "Save file is corrupted or has been manipulated!" << std::endl;
+        getchar();
+        getchar();
+        TitleMenu* title;
+        title->print();
     }
 
-    //std::cout << "Game loaded." << std::endl;
+    // načtení uložených dat hráče
     return Player(hp, str);
 }
