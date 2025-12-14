@@ -5,6 +5,7 @@
 #include "IngameMenu.h"
 #include "Player.h"
 #include "GameState.h"
+#include "Interactions.h"
 
 TitleMenu::TitleMenu()
 {
@@ -46,28 +47,24 @@ void TitleMenu::newGame()
     // globální hráč
     CurrentPlayer = Player(100, 10);
     std::cout << "Starting new game." << std::endl;
-    /*
-    // vytvoří proměnou SaveFile pro fstream.
-    std::fstream SaveFile;
 
-    // pokud neexistuje složka "SaveFile.txt" tak se sama vytvoří. možnosti ios(read=in, write=out(přepisuje data lze použít ofstream pro automatické vybrání write), append=app(připojí data))
-    SaveFile.open("SaveFile.txt", std::ios::out);
+    // Zde je třeba odstranit starý komentář a zavolat GameController.
+    // Původní kód: //Map -> print // TODO spuštění hry
 
-    // ověření zda se soubor otevřel
-    if (SaveFile.is_open())
-    {
-        //import textu do souboru
-        // TODO make playerState
-        SaveFile << "player health: " << player.getHealth()
-        << "\nplayer strength: "<< player.getStrength() << std::endl;
-    }
-
-    // po otevnění souboru se musí zavřít aby se uvolnila paměť.
-    SaveFile.close();*/
-    //Map -> print // TODO spuštění hry
+    // Ukládání by mělo probíhat, až se hra skutečně hraje nebo skončí,
+    // ale ponecháme SaveGame() pro zachování původní logiky.
     SaveGame();     // uložení hry
-    IngameMenu ingame;
-    ingame.print();
+
+    // NOVÁ LOGIKA: Spuštění herního kontroleru
+    GameController game;
+    game.runGameLoop();
+
+    // Po ukončení game.runGameLoop() (buď vítězství, nebo Q) se vracíme na TitleMenu.
+    // Zde by měla být další kontrola stavu, ale prozatím ukončíme smyčku TitleMenu.
+
+    // Původní volání IngameMenu už není potřeba, pokud GameController řídí hru
+    // IngameMenu ingame;
+    // ingame.print();
 }
 
 void TitleMenu::continueGame()

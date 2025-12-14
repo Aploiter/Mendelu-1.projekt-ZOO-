@@ -13,4 +13,10 @@ add_executable(AdamProjektCast main.cpp
         Player.cpp
         Player.h
         GameState.cpp
-        GameState.h)
+        GameState.h
+        Map.cpp
+        Map.h
+        Patterns.cpp
+        Patterns.h
+        Interactions.h
+        Interactions.cpp)
