@@ -1,0 +1,3 @@
+C:/Users/matej/OneDrive/Plocha/pef/ZOO/Projekt/controls/cmake-build-debug/CMakeFiles/controls.dir
+C:/Users/matej/OneDrive/Plocha/pef/ZOO/Projekt/controls/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/matej/OneDrive/Plocha/pef/ZOO/Projekt/controls/cmake-build-debug/CMakeFiles/rebuild_cache.dir
