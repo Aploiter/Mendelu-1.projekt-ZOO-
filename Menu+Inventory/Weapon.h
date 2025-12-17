@@ -3,7 +3,6 @@
 
 #include <string>
 #include <memory>
-
 #include "Item.h"
 
 class Weapon : public Item

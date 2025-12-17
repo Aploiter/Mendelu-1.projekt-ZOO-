@@ -119,6 +119,20 @@ build CMakeFiles/AdamProjektCastNew.dir/Weapon.cpp.obj: CXX_COMPILER__AdamProjek
   OBJECT_DIR = CMakeFiles\AdamProjektCastNew.dir
   OBJECT_FILE_DIR = CMakeFiles\AdamProjektCastNew.dir
 
+build CMakeFiles/AdamProjektCastNew.dir/Enemy.cpp.obj: CXX_COMPILER__AdamProjektCastNew_unscanned_Debug C$:/Users/adamp/OneDrive/Documents/zoo_zs2025-2026_xpesl/Menu+Inventory/Enemy.cpp || cmake_object_order_depends_target_AdamProjektCastNew
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\AdamProjektCastNew.dir\Enemy.cpp.obj.d
+  FLAGS = -static-libgcc -static-libstdc++ -static -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AdamProjektCastNew.dir
+  OBJECT_FILE_DIR = CMakeFiles\AdamProjektCastNew.dir
+
+build CMakeFiles/AdamProjektCastNew.dir/Fighting.cpp.obj: CXX_COMPILER__AdamProjektCastNew_unscanned_Debug C$:/Users/adamp/OneDrive/Documents/zoo_zs2025-2026_xpesl/Menu+Inventory/Fighting.cpp || cmake_object_order_depends_target_AdamProjektCastNew
+  CONFIG = Debug
+  DEP_FILE = CMakeFiles\AdamProjektCastNew.dir\Fighting.cpp.obj.d
+  FLAGS = -static-libgcc -static-libstdc++ -static -g -std=gnu++20 -fdiagnostics-color=always
+  OBJECT_DIR = CMakeFiles\AdamProjektCastNew.dir
+  OBJECT_FILE_DIR = CMakeFiles\AdamProjektCastNew.dir
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target AdamProjektCastNew
@@ -127,7 +141,7 @@ build CMakeFiles/AdamProjektCastNew.dir/Weapon.cpp.obj: CXX_COMPILER__AdamProjek
 #############################################
 # Link the executable AdamProjektCastNew.exe
 
-build AdamProjektCastNew.exe: CXX_EXECUTABLE_LINKER__AdamProjektCastNew_Debug CMakeFiles/AdamProjektCastNew.dir/main.cpp.obj CMakeFiles/AdamProjektCastNew.dir/GameState.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Player.cpp.obj CMakeFiles/AdamProjektCastNew.dir/TitleMenu.cpp.obj CMakeFiles/AdamProjektCastNew.dir/IngameMenu.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Inventory.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Item.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Armor.cpp.obj CMakeFiles/AdamProjektCastNew.dir/consumable.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Weapon.cpp.obj
+build AdamProjektCastNew.exe: CXX_EXECUTABLE_LINKER__AdamProjektCastNew_Debug CMakeFiles/AdamProjektCastNew.dir/main.cpp.obj CMakeFiles/AdamProjektCastNew.dir/GameState.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Player.cpp.obj CMakeFiles/AdamProjektCastNew.dir/TitleMenu.cpp.obj CMakeFiles/AdamProjektCastNew.dir/IngameMenu.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Inventory.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Item.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Armor.cpp.obj CMakeFiles/AdamProjektCastNew.dir/consumable.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Weapon.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Enemy.cpp.obj CMakeFiles/AdamProjektCastNew.dir/Fighting.cpp.obj
   CONFIG = Debug
   FLAGS = -static-libgcc -static-libstdc++ -static -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32

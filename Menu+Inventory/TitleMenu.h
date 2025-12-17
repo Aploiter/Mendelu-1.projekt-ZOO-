@@ -4,7 +4,8 @@
 class TitleMenu
 {
 public:
-    TitleMenu();
+    TitleMenu(); // konstruktor (volá se při vytvoření objektu)
+    //metody pro akce v menu
     void print();
     void newGame();
     void continueGame();

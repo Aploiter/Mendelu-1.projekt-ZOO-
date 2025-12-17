@@ -30,4 +30,8 @@ add_executable(AdamProjektCastNew main.cpp
         consumable.h
         consumable.cpp
         Weapon.h
-        Weapon.cpp)
+        Weapon.cpp
+        Enemy.cpp
+        Enemy.h
+        Fighting.cpp
+        Fighting.h)

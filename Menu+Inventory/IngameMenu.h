@@ -4,7 +4,8 @@
 class IngameMenu
 {
 public:
-    IngameMenu();
+    IngameMenu(); // konstruktor
+    //metody pro akce v menu
     void print();
     void loadSave();
     void returnToTitle();
