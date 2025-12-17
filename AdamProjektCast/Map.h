@@ -26,8 +26,8 @@ const char PLAYER_CHAR = 'H';
 
 class Map {
 private:
-    size_t playerRow = 0; // Startovní souřadnice (0, 0)
-    size_t playerCol = 0;
+    int playerRow = 0; // Startovní souřadnice (0, 0)
+    int playerCol = 0;
     std::vector<std::vector<bool>> exploredCells;
     std::vector<std::vector<const Patterns::CellPattern*>> mapa = {
         { &Patterns::H0D0L0R1, &Patterns::H0D1L1R0, &Patterns::H0D0L0R1, &Patterns::H0D1L1R1, &Patterns::H0D1L1R0 },
@@ -42,7 +42,7 @@ public:
     void printMap();
     void initializeExploration();
     bool movePlayer(Direction dir);
-bool isPathOpen(size_t r1, size_t c1, size_t r2, size_t c2) const;
+bool isPathOpen(int r1, int c1, int r2, int c2) const;
     bool isPlayerAtExit() const;
 };
 

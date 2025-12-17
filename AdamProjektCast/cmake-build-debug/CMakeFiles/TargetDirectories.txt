@@ -1,3 +1,3 @@
-C:/Users/adamp/OneDrive/Documents/zoo_zs2025-2026_xpesl/AdamProjektCast/cmake-build-debug/CMakeFiles/AdamProjektCast.dir
-C:/Users/adamp/OneDrive/Documents/zoo_zs2025-2026_xpesl/AdamProjektCast/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/adamp/OneDrive/Documents/zoo_zs2025-2026_xpesl/AdamProjektCast/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+C:/Users/Michal/Mendelu-1.projekt-ZOO-/AdamProjektCast/cmake-build-debug/CMakeFiles/AdamProjektCast.dir
+C:/Users/Michal/Mendelu-1.projekt-ZOO-/AdamProjektCast/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Michal/Mendelu-1.projekt-ZOO-/AdamProjektCast/cmake-build-debug/CMakeFiles/rebuild_cache.dir

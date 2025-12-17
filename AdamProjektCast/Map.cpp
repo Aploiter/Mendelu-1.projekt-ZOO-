@@ -22,19 +22,16 @@ constexpr int LEFT_BORDER_POS = 0;
 constexpr int RIGHT_BORDER_POS = 4;
 
 
-// --------------------------------------------------------
-// Konstruktor (zahrnuje inicializaci Fog of War)
-// --------------------------------------------------------
+
 Map::Map() {
-    // Inicializace exploredCells probíhá hned, protože mapa je definována v Map.h.
-    size_t rows = mapa.size();
-    size_t cols = rows > 0 ? mapa[0].size() : 0;
+    int rows = mapa.size();
+    int cols = rows > 0 ? mapa[0].size() : 0;
 
     if (rows > 0 && cols > 0) {
         // Inicializace matice na všechny 'false' (nenavštíveno)
         exploredCells.assign(rows, std::vector<bool>(cols, false));
 
-        // Hráčova startovní pozice je prozkoumaná (předpoklad: [0, 0])
+        // Hráčova startovní pozice je prozkoumaná ([0, 0])
         if (playerRow < rows && playerCol < cols) {
             exploredCells[playerRow][playerCol] = true;
         }
@@ -42,10 +39,7 @@ Map::Map() {
 }
 
 
-/**
- * Pomocná funkce: Kontroluje, zda je průchod mezi dvěma SOUSIEDNÍMI buňkami volný.
- */
-bool Map::isPathOpen(size_t r1, size_t c1, size_t r2, size_t c2) const {
+bool Map::isPathOpen(int r1, int c1, int r2, int c2) const {
     if (r1 >= mapa.size() || r2 >= mapa.size() || c1 >= mapa[0].size() || c2 >= mapa[0].size()) return false;
 
     // Zajištění, že se jedná o přímého souseda
@@ -86,8 +80,8 @@ bool Map::isPathOpen(size_t r1, size_t c1, size_t r2, size_t c2) const {
 // Implementace pohybu a kolizí
 // --------------------------------------------------------
 bool Map::movePlayer(Direction dir) {
-    size_t targetRow = playerRow;
-    size_t targetCol = playerCol;
+    int targetRow = playerRow;
+    int targetCol = playerCol;
 
     // 1. Počítání cílové pozice a kontrola hranic
     switch (dir) {
@@ -114,14 +108,6 @@ bool Map::movePlayer(Direction dir) {
         return false;
     }
 
-    // 3. Pohyb je povolen
-    playerRow = targetRow;
-    playerCol = targetCol;
-
-    // Označení cílové buňky jako prozkoumané
-    exploredCells[playerRow][playerCol] = true;
-
-    return true;
 }
 
 // --------------------------------------------------------
@@ -142,12 +128,12 @@ void Map::printMap() {
         return;
     }
 
-    size_t rows = mapa.size();
-    size_t cols = mapa[0].size();
+    int rows = mapa.size();
+    int cols = mapa[0].size();
 
-    for (size_t r = 0; r < rows; ++r) {
+    for (int r = 0; r < rows; ++r) {
         for (int line = 0; line < 3; ++line) {
-            for (size_t c = 0; c < cols; ++c) {
+            for (int c = 0; c < cols; ++c) {
 
                 const CellPattern* patternPtr = mapa[r][c];
                 bool isExplored = exploredCells[r][c];

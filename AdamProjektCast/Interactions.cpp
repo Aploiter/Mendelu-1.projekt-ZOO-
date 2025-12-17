@@ -3,8 +3,6 @@
 #include "Interactions.h"
 #include <limits> // pro std::numeric_limits
 
-// Předpokládáme, že barvy jsou definovány v Map.h, abychom je zde mohli použít
-// extern const char* LIGHT_GREEN; // Měly by být definovány jako static const v Map.h
 
 GameController::GameController() : isRunning(true) {
     // GameMap je automaticky inicializována.
@@ -54,13 +52,13 @@ void GameController::runGameLoop() {
     std::cout << "Použijte 8/6/4/2 pro pohyb, Q pro ukončení.\n";
 
     while (isRunning) {
-        // 1. Vyčistit obrazovku (optional, složitější na multi-platform)
+        // Vyčistit obrazovku (optional, složitější na multi-platform)
         std::cout << "\n=========================================\n";
 
-        // 2. Vykreslení mapy
+        // Vykreslení mapy
         gameMap.printMap();
 
-        // 3. Přijetí vstupu
+        // Přijetí vstupu
         char input;
         std::cout << "Váš tah (8/6/4/2/Q): ";
 
@@ -71,14 +69,11 @@ void GameController::runGameLoop() {
             break;
         }
 
-        // 4. Vyčištění vstupního bufferu (důležité pro C++ konzolové aplikace)
         std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 
-        // 5. Zpracování vstupu a logiky
+        // Zpracování vstupu a logiky
         handleInput(input);
 
-        // Ošetření stavu, např. když hráč dosáhne cíle (EXIT)
-        // if (gameMap.isGameOver()) { isRunning = false; }
     }
 
     std::cout << "--- KONEC HRY ---\n";
