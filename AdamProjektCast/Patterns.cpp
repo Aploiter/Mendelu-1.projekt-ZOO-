@@ -132,4 +132,12 @@ namespace Patterns {
         "xxxxx"
     });
 
+    const CellPattern BOSS_TILE = {
+        {
+            "\033[1;31m+---+\033[0m",
+            "\033[1;31m| B |\033[0m",
+            "\033[1;31m+---+\033[0m"
+        }
+    };
+
 } // namespace Patterns

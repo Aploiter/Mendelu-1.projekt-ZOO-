@@ -17,7 +17,7 @@ public:
 private:
     Map gameMap;
     bool isRunning;
-
+    int moveCount = 0;
     void handleInput(char input);
 };
 

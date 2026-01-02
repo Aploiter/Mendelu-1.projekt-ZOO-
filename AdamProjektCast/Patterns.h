@@ -36,6 +36,7 @@ namespace Patterns {
     extern const CellPattern H0D1L1R1;
     extern const CellPattern H1D1L1R1;
     extern const CellPattern H0D0L1R1EXIT;
+    extern const CellPattern BOSS_TILE;
 }
 
 #endif // PATTERNS_H
