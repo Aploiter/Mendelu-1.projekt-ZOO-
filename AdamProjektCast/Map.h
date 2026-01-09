@@ -26,6 +26,8 @@ class Map {
 private:
     int playerRow;
     int playerCol;
+    int tilesPlaced = 0;
+    const int MAX_TILES = 10;
     std::vector<std::vector<const Patterns::CellPattern*>> mapa;
     std::vector<std::vector<bool>> exploredCells;
     std::vector<const Patterns::CellPattern*> tileDeck;
